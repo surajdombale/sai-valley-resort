@@ -4,3 +4,6 @@ out
 .env*
 # Client photos are NOT committed. Put real, owner-approved photos in public/photos/ locally.
 public/photos/
+
+# Private project notes, never pushed
+CLAUDE.md
