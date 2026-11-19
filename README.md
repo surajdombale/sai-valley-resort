@@ -19,8 +19,8 @@ Components in `components/Site.js` do not need to change when reusing this for a
 
 ## Photos
 `public/photos/` is gitignored. Use only photos the owner has approved.
-Set `PHOTO_SET` in `site.config.js` to `'placeholders'` for a public repo / GitHub Pages
-and to `'local'` when previewing with real photos on your own computer.
+The site uses the neutral placeholders by default (safe for a public repo / GitHub Pages).
+To preview with real photos on your own computer, add `NEXT_PUBLIC_PHOTO_SET=local` to `.env.local` (gitignored).
 
 ## Deploy (GitHub Pages)
 1. Push to the `main` branch of a GitHub repo.

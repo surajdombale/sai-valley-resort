@@ -3,7 +3,9 @@
 
 // 'placeholders' = neutral images committed to git (safe for a public repo).
 // 'local'        = real photos in public/photos/ (gitignored; use only photos the owner approved).
-export const PHOTO_SET = 'local';
+// Defaults to placeholders so a pushed build never points at uncommitted photos.
+// For a private preview with real photos, put NEXT_PUBLIC_PHOTO_SET=local in .env.local (gitignored).
+export const PHOTO_SET = process.env.NEXT_PUBLIC_PHOTO_SET === 'local' ? 'local' : 'placeholders';
 
 export const photoSets = {
   placeholders: {
