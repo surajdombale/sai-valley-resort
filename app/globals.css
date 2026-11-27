@@ -107,6 +107,12 @@
   .enq .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
   .contact p{margin-bottom:16px}
   .contact b{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a9d1b8;font-weight:600}
+  .contact .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .contact .links .btn{display:inline-flex;align-items:center;gap:8px}
+  .enq .btn-line{border-color:rgba(255,255,255,.55);color:#fff}.enq .btn-line:hover{background:#fff;color:var(--forest)}
+  footer .social{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;margin:12px 0 4px}
+  footer .social a{display:inline-flex;align-items:center;gap:7px;color:#dfe9e2;font-weight:500}
+  footer .social a:hover{color:#fff}
   form{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
   form .full{grid-column:1/-1}
   form label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a9d1b8;font-weight:600;display:block}

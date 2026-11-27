@@ -8,6 +8,19 @@ const photo = (key) => `${basePath}${photoSets[PHOTO_SET][key]}`;
 
 const Stars = () => <span aria-label="5 out of 5">★★★★★</span>;
 
+const PinIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+    <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" />
+  </svg>
+);
+const InstaIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+const instaUrl = site.instagram ? `https://www.instagram.com/${site.instagram}/` : '';
+const ext = { target: '_blank', rel: 'noopener noreferrer' };
+
 export default function Site() {
   const [tab, setTab] = useState('hotel');
   const [lightbox, setLightbox] = useState(null);
@@ -192,7 +205,10 @@ export default function Site() {
               <p><b>Address</b>{site.address}</p>
               <p><b>Phone</b><a href={`tel:${site.phoneTel}`}>{site.phone}</a> <span style={{ opacity: 0.6 }}>{site.phoneNote}</span></p>
               <p><b>Front desk</b>{site.frontDesk}</p>
-              <p style={{ marginTop: 24 }}><a className="btn btn-clay" href={site.mapsLink} target="_blank" rel="noopener noreferrer">Get directions</a></p>
+              <div className="links">
+                <a className="btn btn-clay" href={site.mapsLink} {...ext}><PinIcon /> Get directions</a>
+                {instaUrl && <a className="btn btn-line" href={instaUrl} {...ext}><InstaIcon /> Instagram</a>}
+              </div>
             </div>
 
             <form onSubmit={onSend}>
@@ -223,6 +239,10 @@ export default function Site() {
 
       <footer>
         {site.name} &middot; {site.address.split(',').slice(0, 2).join(',')}
+        <div className="social">
+          <a href={site.mapsLink} {...ext} aria-label="Location on Google Maps"><PinIcon /> Location</a>
+          {instaUrl && <a href={instaUrl} {...ext} aria-label="Instagram"><InstaIcon /> @{site.instagram}</a>}
+        </div>
         <small>{site.footerNote}</small>
       </footer>
 
