@@ -29,6 +29,8 @@ export const site = {
   mapsLink: 'https://maps.app.goo.gl/puGWUzGB48e3VLwZ9',
   mapEmbed: 'https://maps.google.com/maps?q=17.926289,73.6457284&z=16&output=embed',
   frontDesk: '24 hours',
+  // Real Instagram handle only (without @). Left empty = the Instagram link is hidden.
+  instagram: '',
 
   hero: {
     eyebrow: 'Lodwick Point Road · Mahabaleshwar',
